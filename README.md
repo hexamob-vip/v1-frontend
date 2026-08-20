@@ -58,4 +58,3 @@ Usage : `className="bg-azul text-rojo"`
 - Les liens internes pointent encore vers hexamob.com (autres pages non migrées).
 - Les plugins GSAP Club (SplitText, DrawSVG) proviennent du thème original.
 
-
