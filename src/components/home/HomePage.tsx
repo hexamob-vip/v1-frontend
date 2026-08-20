@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import AmbientGlow from "@/components/layout/AmbientGlow";
 import Header from "@/components/layout/Header";
@@ -272,7 +271,6 @@ export default function HomePage() {
             >
               <div className={lineClass} />
               <h3 className={h3Class}>ÉVÉNEMENTS SPÉCIAUX</h3>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <div className="pointer-events-none aspect-video w-[15vw] max-lg:hidden rounded-xl overflow-hidden">
                 <img
                   src="/assets/images/hexamob-vtc-chauffeur-haut-gamme-la-rochelle.jpg"

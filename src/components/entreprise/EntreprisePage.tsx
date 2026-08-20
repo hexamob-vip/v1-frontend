@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import AmbientGlow from "@/components/layout/AmbientGlow";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -254,7 +253,7 @@ export default function EntreprisePage() {
                   <div
                     className={`relative aspect-[4/3] overflow-hidden rounded-xl ${item.icon === "02" ? "order-1 max-lg:order-2" : ""}`}
                   >
-                    <img src={item.image} alt={item.title} fill className="w-full h-full object-cover" sizes="(max-width: 768px) 94vw, 45vw" />
+                    <img src={item.image} alt={item.title} className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-page/40 to-transparent" />
                   </div>
                 </div>
@@ -292,7 +291,6 @@ export default function EntreprisePage() {
                   key={src}
                   className="cert-item flex h-[5vw] w-[5vw] items-center max-lg:h-[16vw] max-lg:w-[16vw]"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={src} alt="" className="h-auto w-full mix-blend-multiply brightness-200" />
                 </div>
               ))}
@@ -329,9 +327,7 @@ export default function EntreprisePage() {
                     <img
                       src={vehicle.image}
                       alt={vehicle.name}
-                      fill
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 94vw, 30vw"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-page via-page/20 to-transparent" />
                     <div className="absolute bottom-0 p-[2vw] max-lg:p-[4vw]">

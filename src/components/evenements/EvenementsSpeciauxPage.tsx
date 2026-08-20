@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import AmbientGlow from "@/components/layout/AmbientGlow";
 import Header from "@/components/layout/Header";
@@ -117,12 +116,10 @@ export default function EvenementsSpeciauxPage() {
                   className="event-card group overflow-hidden rounded-xl border border-white/10 transition-colors hover:border-gold-800/40 bg-page/90 backdrop-blur-lg"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <Image
+                    <img
                       src={event.image}
                       alt={event.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 94vw, 47vw"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       style={{ objectPosition: event.bgPosition ?? "center center" }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-page via-page/40 to-transparent" />
@@ -268,9 +265,7 @@ export default function EvenementsSpeciauxPage() {
                   <img
                     src="/assets/images/hexamob-vtc-chauffeur-privee-rochefort-charente.jpg"
                     alt="Mercedes Classe S HEXAMOB"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 94vw, 45vw"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-page/80 to-transparent" />
                   <div className="absolute bottom-0 p-[2vw] max-lg:p-[4vw]">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import AmbientGlow from "@/components/layout/AmbientGlow";
 import Header from "@/components/layout/Header";
@@ -210,12 +209,10 @@ export default function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                   className="related-service group overflow-hidden rounded-xl border border-white/10 transition hover:border-gold-800/40"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
+                    <img
                       src={related.cardImage}
                       alt={related.label}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 45vw, 22vw"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       style={{ objectPosition: related.cardPosition ?? "center center" }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-page to-transparent" />

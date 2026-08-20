@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import AmbientGlow from "@/components/layout/AmbientGlow";
 import Header from "@/components/layout/Header";

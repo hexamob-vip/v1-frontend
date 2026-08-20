@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type MouseEvent, type ReactNode } from "react";
-import Logo from "@/components/layout/Logo";
 import { getScrollbar } from "@/lib/hexamob/animations/setupScroll";
 import { cn } from "@/lib/hexamob/cn";
 import { navLinks, serviceLinks } from "@/lib/hexamob/navigation";

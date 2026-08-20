@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import AmbientGlow from "@/components/layout/AmbientGlow";
 import Header from "@/components/layout/Header";
@@ -89,9 +88,7 @@ export default function ServicesPage() {
                     <img
                       src={service.cardImage}
                       alt={service.label}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 94vw, 47vw"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-page via-page/30 to-transparent" />
                     <span className="absolute left-[2vw] top-[2vw] font-type1 text-[6vw] leading-none text-white/10 max-lg:text-[12vw]">
