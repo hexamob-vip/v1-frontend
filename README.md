@@ -57,3 +57,5 @@ Usage : `className="bg-azul text-rojo"`
 - Le modèle 3D apparaît au scroll (comme sur le site original).
 - Les liens internes pointent encore vers hexamob.com (autres pages non migrées).
 - Les plugins GSAP Club (SplitText, DrawSVG) proviennent du thème original.
+
+
