@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${destination.label} — Circuits VTC HEXAMOB`,
+    title: `VTC ${destination.label} — Circuits et Transport privé HEXAMOB`,
     description: destination.intro,
   };
 }

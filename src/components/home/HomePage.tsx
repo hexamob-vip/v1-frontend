@@ -27,7 +27,7 @@ import {
 
 const stats = [
   { num: "+ 10 000", desc: "prestations VTC premium réalisées chaque année" },
-  { num: "+ 15", desc: "ans d'expérience VTC" },
+  { num: "+ 6", desc: "ans d'expérience VTC" },
   { num: "+ 100", desc: "véhicules entretenus" },
   { num: "+ 24/7", desc: "disponibilité service client" },
   { num: "+ 10", desc: "langues de service client" },
@@ -171,7 +171,7 @@ export default function HomePage() {
               id="year"
               className="absolute bottom-[36vw] left-[3vw] z-[9] text-gold-800 max-lg:bottom-[96vw]"
             >
-              DEPUIS 2007
+              DEPUIS 2020
             </div>
             <div
               id="start-scroll"
@@ -194,7 +194,7 @@ export default function HomePage() {
             className="absolute left-[35.5vw] top-[calc(100vh-13vw)] z-[9] h-[6vw] w-[40vw] p-[3vw] text-white transition-colors duration-1000 max-lg:left-0 max-lg:top-[calc(100vh-67vw)] max-lg:h-[39vw] max-lg:w-[94vw] [&.blue]:text-white"
           >
             <article className="transition-colors duration-1000">
-              Transport premium en Charente-Maritime depuis 2007. Confort,
+              Transport premium en Charente-Maritime depuis 2020. Confort,
               ponctualité et élégance au cœur de chaque trajet. Nous répondons
               aux besoins spécifiques de nos clients avec qualité de service,
               véhicules entretenus et chauffeurs formés, en respectant les
@@ -333,7 +333,7 @@ export default function HomePage() {
                 className="w-[50vw] text-white max-lg:mt-[3vw] max-lg:w-full"
                 style={{ textShadow: "0 0 10px rgba(0, 0, 0, 1)" }}
               >
-                L&apos;une de nos spécialités, avec plus de 15 ans
+                L&apos;une de nos spécialités, avec plus de 6 ans
                 d&apos;expérience, est le transport premium en
                 Charente-Maritime. Confort, ponctualité et élégance à chaque
                 trajet grâce à des véhicules entretenus et des chauffeurs
@@ -516,7 +516,7 @@ export default function HomePage() {
           >
             <div
               id="commitment-content"
-              className="relative left-1/2 z-[9] flex w-1/2 flex-col justify-center p-[3vw] max-lg:left-0 max-lg:w-full [&_article]:px-[3vw]"
+              className="pointer-events-auto relative left-1/2 z-[9] flex w-1/2 flex-col justify-center p-[3vw] max-lg:left-0 max-lg:w-full [&_article]:px-[3vw]"
             >
               <h2 className={titleClass}>
                 Nous misons sur un service VTC premium

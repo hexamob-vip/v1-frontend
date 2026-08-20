@@ -17,6 +17,16 @@ const h3Class = "text-[1.2vw] uppercase text-gold-500 max-lg:text-[3.5vw]";
 const lineClass =
   "line absolute -top-[3vw] h-px w-full origin-left bg-white/50 max-lg:-top-[4vw]";
 
+function aroundLabel(label: string) {
+  return label.startsWith("Île") ? `l'${label}` : label;
+}
+
+function nearbyOrigin(destination: Destination) {
+  if (destination.slug === "ile-de-re") return "Saint-Martin-de-Ré";
+  if (destination.slug === "ile-d-oleron") return "Le Château-d'Oléron";
+  return `le centre de ${destination.label}`;
+}
+
 type DestinationPageProps = {
   destination: Destination;
   heroImage: string;
@@ -116,6 +126,38 @@ export default function DestinationPage({
                   </span>
                   <h3 className={`${h3Class} mb-[1vw]`}>{visit.title}</h3>
                   <p className="text-white/70">{visit.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className={`${sectionClass} flex-col py-[10vw] max-lg:py-[20vw]`}>
+            <div className="relative mx-[3vw] mb-[6vw]">
+              <div className={lineClass} />
+              <h3 className={h3Class}>À proximité</h3>
+              <h2 className={`${titleClass} !p-0 !pt-[2vw]`}>
+                Communes
+                <br />
+                autour de {aroundLabel(destination.label)}.
+              </h2>
+              <p className="mt-[2vw] w-[50vw] text-white/60 max-lg:w-full">
+                Transferts VTC depuis {nearbyOrigin(destination)} — distances et durées estimées, hors trafic.
+              </p>
+            </div>
+            <div className="mx-[3vw] grid w-[94vw] grid-cols-4 gap-[1.5vw] max-lg:grid-cols-2 max-lg:gap-[3vw]">
+              {destination.nearby.map((town) => (
+                <div
+                  key={town.label}
+                  className="nearby-town rounded-xl border border-white/10 bg-page/40 p-[1.5vw] backdrop-blur-lg max-lg:p-[4vw]"
+                >
+                  <h3 className="font-type1 text-[1.5vw] leading-tight text-white max-lg:text-[4.5vw]">
+                    {town.label}
+                  </h3>
+                  <p className="mt-[0.6vw] text-[0.8vw] uppercase tracking-wide text-gold-500 max-lg:mt-[2vw] max-lg:text-[2.5vw]">
+                    {town.distance}
+                    <span className="mx-[0.4vw] text-white/30">·</span>
+                    {town.duration}
+                  </p>
                 </div>
               ))}
             </div>

@@ -24,7 +24,7 @@ const staticPages: SeoPage[] = [
   {
     path: "/entreprise",
     title: "Entreprise",
-    description: "Présentation d'HEXAMOB, société VTC premium en Charente-Maritime depuis 2007.",
+    description: "Présentation d'HEXAMOB, société VTC premium en Charente-Maritime depuis 2020.",
     changeFrequency: "monthly",
     priority: 0.8,
   },

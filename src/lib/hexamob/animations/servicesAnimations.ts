@@ -50,6 +50,21 @@ export function initServicesAnimations() {
     });
   });
 
+  gsap.utils.toArray<HTMLElement>(".nearby-town").forEach((town, i) => {
+    gsap.from(town, {
+      scrollTrigger: {
+        trigger: town,
+        start: "top 90%",
+        toggleActions: "play none none reverse",
+      },
+      y: 20,
+      autoAlpha: 0,
+      duration: 0.45,
+      delay: i * 0.04,
+      ease: "Power2.out",
+    });
+  });
+
   gsap.utils.toArray<HTMLElement>(".related-service").forEach((card, i) => {
     gsap.from(card, {
       scrollTrigger: {

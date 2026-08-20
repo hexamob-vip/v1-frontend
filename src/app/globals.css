@@ -116,3 +116,11 @@ nav.blue {
   background: var(--color-white) !important;
   opacity: 0.3;
 }
+
+html,
+body,
+.scroller,
+.scroll-content {
+  -webkit-user-select: text;
+  user-select: text;
+}

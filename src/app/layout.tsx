@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr-FR">
-      <body className="overflow-hidden bg-page font-type2 text-[1vw] leading-[1.2] text-white select-none opacity-0 max-lg:text-[3.5vw]">
+      <body className="overflow-hidden bg-page font-type2 text-[1vw] leading-[1.2] text-white select-text opacity-0 max-lg:text-[3.5vw]">
         <DeviceSizeIndicator />
         {children}
       </body>

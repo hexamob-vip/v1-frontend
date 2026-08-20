@@ -264,15 +264,15 @@ export default function EvenementsSpeciauxPage() {
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                   <img
                     src="/assets/images/hexamob-vtc-chauffeur-privee-rochefort-charente.jpg"
-                    alt="Mercedes Classe S HEXAMOB"
+                    alt="Lexus ES 300h HEXAMOB"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-page/80 to-transparent" />
                   <div className="absolute bottom-0 p-[2vw] max-lg:p-[4vw]">
-                    <p className="text-[0.9vw] uppercase text-gold-500 max-lg:text-[2.8vw]">Prestige absolu</p>
-                    <h3 className="font-type1 text-[2.5vw] text-white max-lg:text-[6vw]">Mercedes Classe S</h3>
+                    <p className="text-[0.9vw] uppercase text-gold-500 max-lg:text-[2.8vw]">Élégance hybride</p>
+                    <h3 className="font-type1 text-[2.5vw] text-white max-lg:text-[6vw]">Lexus ES 300h</h3>
                     <p className="mt-[1vw] text-white/70 max-lg:text-[3.2vw]">
-                      Le summum du raffinement pour vos mariages, galas et réceptions d&apos;exception.
+                      Berline hybride premium pour vos mariages, galas et réceptions d&apos;exception — Classe V et Tesla Model 3 selon vos besoins.
                     </p>
                   </div>
                 </div>

@@ -21,14 +21,14 @@ const certBadges = [
 
 const timeline = [
   {
-    year: "2007",
+    year: "2020",
     title: "Une passion, une vision",
     text: "HEXAMOB naît en Charente-Maritime avec une conviction simple : le transport avec chauffeur doit allier confort, ponctualité et élégance. Depuis nos premiers trajets, nous avons bâti une réputation d'excellence auprès de particuliers et d'entreprises.",
   },
   {
-    year: "2015",
+    year: "2025",
     title: "L'expertise premium",
-    text: "Plus de 15 ans d'expérience VTC nous ont permis de développer un savoir-faire unique : anticiper les besoins, personnaliser chaque prestation et garantir un service irréprochable sur l'ensemble du département.",
+    text: "Cinq années d'expérience VTC nous ont permis de développer un savoir-faire unique : anticiper les besoins, personnaliser chaque prestation et garantir un service irréprochable sur l'ensemble du département.",
   },
   {
     year: String(new Date().getFullYear()),
@@ -81,25 +81,25 @@ const certifications = [
 
 const fleet = [
   {
-    name: "Mercedes Classe S",
-    tagline: "Prestige absolu",
-    desc: "Le summum du raffinement pour vos événements, mariages, réceptions d'entreprise et trajets d'affaires. Silhouette imposante, finitions cuir, confort arrière exceptionnel.",
-    specs: ["4 places", "Climatisation multi-zones", "Espace bagages généreux"],
+    name: "Lexus ES 300h",
+    tagline: "Élégance hybride",
+    desc: "Notre berline phare : confort silencieux et motorisation hybride pour vos trajets quotidiens, transferts aéroport, déplacements professionnels et événements. L'alliance du raffinement et de la responsabilité.",
+    specs: ["4 places", "Hybride", "Confort premium"],
     image: "/assets/images/hexamob-vtc-chauffeur-privee-rochefort-charente.jpg",
   },
   {
-    name: "Lexus ES",
-    tagline: "Élégance hybride",
-    desc: "Confort silencieux et technologie hybride pour vos trajets quotidiens, transferts aéroport et déplacements professionnels. L'alliance parfaite entre performance et responsabilité.",
-    specs: ["4 places", "Motorisation hybride", "Confort premium"],
-    image: "/assets/img/hexamob-electric.jpg",
+    name: "Mercedes Classe V",
+    tagline: "Petits groupes — ou équivalent",
+    desc: "Van premium pour vos petits groupes : familles, EVG, navettes invités et déplacements à plusieurs. Espace, confort et discrétion, avec un véhicule équivalent selon disponibilité.",
+    specs: ["Jusqu'à 7 places", "Grand volume bagages", "Idéal groupes"],
+    image: "/assets/img/group.jpg",
   },
   {
-    name: "Berline premium",
-    tagline: "Polyvalence au quotidien",
-    desc: "Véhicules haut de gamme entretenus pour vos transferts standards : gare, aéroport, centre-ville et trajets inter-villes en Charente-Maritime.",
-    specs: ["4 places", "Wi-Fi à bord", "Bouteilles d'eau"],
-    image: "/assets/images/hexamob-vtc-chauffeur-privee-saintes-charente.jpg",
+    name: "Tesla Model 3 2026",
+    tagline: "100 % électrique",
+    desc: "La dernière génération Tesla pour un trajet silencieux, technologique et responsable. Idéale pour les transferts urbains, aéroport et déplacements professionnels au quotidien.",
+    specs: ["4 places", "100 % électrique", "Modèle 2026"],
+    image: "/assets/img/hexamob-electric.jpg",
   },
 ];
 
@@ -151,10 +151,10 @@ export default function EntreprisePage() {
               </h1>
               <div className="mt-[2vw] flex items-end gap-[4vw] max-lg:mt-[4vw] max-lg:flex-col max-lg:items-start">
                 <p className="w-[40vw] text-white/80 max-lg:w-full">
-                  Depuis 2007, HEXAMOB incarne l&apos;excellence du VTC premium en Charente-Maritime. Découvrez
+                  Depuis 2020, HEXAMOB incarne l&apos;excellence du VTC premium en Charente-Maritime. Découvrez
                   l&apos;engagement, les certifications et la flotte qui font notre différence.
                 </p>
-                <div className="text-[3vw] text-gold-500 max-lg:text-[8vw]">DEPUIS 2007</div>
+                <div className="text-[3vw] text-gold-500 max-lg:text-[8vw]">DEPUIS 2020</div>
               </div>
             </div>
           </section>

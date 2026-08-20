@@ -57,7 +57,7 @@ export const packages: EventPackage[] = [
     tagline: "Mariage",
     price: "Sur devis",
     includes: [
-      "Mercedes Classe S pour les mariés",
+      "Lexus ES 300h pour les mariés",
       "Champagne et eau à bord",
       "Décoration discrète du véhicule",
       "Coordination avec le lieu de réception",
@@ -70,7 +70,7 @@ export const packages: EventPackage[] = [
     tagline: "EVG / EVJF",
     price: "Sur devis",
     includes: [
-      "Navette premium jusqu'à 8 passagers",
+      "Navette Mercedes Classe V (ou équivalent) jusqu'à 7 passagers",
       "Itinéraire flexible sur la journée",
       "Pauses et arrêts sur demande",
       "Chauffeur discret et disponible",
@@ -84,7 +84,7 @@ export const packages: EventPackage[] = [
     includes: [
       "Mise à disposition véhicule + chauffeur",
       "Demi-journée ou journée entière",
-      "Flotte Mercedes Classe S disponible",
+      "Lexus ES 300h, Classe V ou Tesla Model 3",
       "Navettes invités en option",
       "Devis personnalisé selon votre programme",
     ],
@@ -116,8 +116,9 @@ export const processSteps: ProcessStep[] = [
 
 export const eventHighlights = [
   "Forfaits tout compris",
-  "Mercedes Classe S",
-  "Navettes multi-véhicules",
+  "Lexus ES 300h",
+  "Mercedes Classe V",
+  "Tesla Model 3",
   "Champagne à bord",
   "Coordination événementielle",
   "Devis personnalisé",

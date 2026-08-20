@@ -9,6 +9,12 @@ export type DestinationCircuit = {
   desc: string;
 };
 
+export type NearbyTown = {
+  label: string;
+  distance: string;
+  duration: string;
+};
+
 export type Destination = {
   slug: string;
   label: string;
@@ -20,6 +26,7 @@ export type Destination = {
   toDo: string[];
   visits: DestinationVisit[];
   circuits: DestinationCircuit[];
+  nearby: NearbyTown[];
 };
 
 export const destinations: Destination[] = [
@@ -54,6 +61,16 @@ export const destinations: Destination[] = [
       { title: "Francofolies & Stereoparc", duration: "Sur mesure", desc: "Navettes VTC premium pour les festivals estivaux : Francofolies à La Rochelle et Stereoparc à Rochefort, aller-retour hôtel ou gare." },
       { title: "La Rochelle by night", duration: "Soirée", desc: "Dîner en centre-ville, balade nocturne sur les quais et retour hôtel en VTC." },
     ],
+    nearby: [
+      { label: "Aytré", distance: "6 km", duration: "12 min" },
+      { label: "Puilboreau", distance: "5 km", duration: "10 min" },
+      { label: "Lagord", distance: "5 km", duration: "12 min" },
+      { label: "Périgny", distance: "8 km", duration: "15 min" },
+      { label: "Angoulins", distance: "10 km", duration: "15 min" },
+      { label: "Châtelaillon-Plage", distance: "15 km", duration: "20 min" },
+      { label: "Nieul-sur-Mer", distance: "8 km", duration: "15 min" },
+      { label: "Dompierre-sur-Mer", distance: "9 km", duration: "15 min" },
+    ],
   },
   {
     slug: "saintes",
@@ -81,6 +98,16 @@ export const destinations: Destination[] = [
       { title: "Saintes patrimoine", duration: "Demi-journée", desc: "Arc de Germanicus, amphithéâtre, cathédrale et bords de Charente." },
       { title: "Saintes & Cognac", duration: "Journée", desc: "Matin à Saintes, après-midi dans les vignobles et maisons de Cognac." },
       { title: "Transfert gare & visite", duration: "Sur mesure", desc: "Prise en charge à la gare TGV puis circuit culturel à la carte." },
+    ],
+    nearby: [
+      { label: "Fontcouverte", distance: "5 km", duration: "10 min" },
+      { label: "Les Gonds", distance: "4 km", duration: "8 min" },
+      { label: "Chaniers", distance: "8 km", duration: "12 min" },
+      { label: "Saint-Georges-des-Coteaux", distance: "7 km", duration: "12 min" },
+      { label: "Bussac-sur-Charente", distance: "8 km", duration: "12 min" },
+      { label: "Taillebourg", distance: "15 km", duration: "20 min" },
+      { label: "Port-d'Envaux", distance: "12 km", duration: "18 min" },
+      { label: "Pons", distance: "22 km", duration: "25 min" },
     ],
   },
   {
@@ -116,6 +143,16 @@ export const destinations: Destination[] = [
       { title: "Rochefort & Fouras", duration: "Journée", desc: "Patrimoine naval le matin, plage et vue sur Fort Boyard l'après-midi." },
       { title: "Estuaire de la Charente", duration: "Journée", desc: "Circuit le long de l'estuaire jusqu'à l'Île d'Oléron ou Royan." },
     ],
+    nearby: [
+      { label: "Tonnay-Charente", distance: "7 km", duration: "12 min" },
+      { label: "Fouras", distance: "15 km", duration: "20 min" },
+      { label: "Échillais", distance: "8 km", duration: "12 min" },
+      { label: "Saint-Agnant", distance: "10 km", duration: "15 min" },
+      { label: "Soubise", distance: "12 km", duration: "18 min" },
+      { label: "Saint-Laurent-de-la-Prée", distance: "12 km", duration: "18 min" },
+      { label: "Breuil-Magné", distance: "8 km", duration: "12 min" },
+      { label: "Yves", distance: "18 km", duration: "22 min" },
+    ],
   },
   {
     slug: "royan",
@@ -143,6 +180,16 @@ export const destinations: Destination[] = [
       { title: "Royan & plages", duration: "Demi-journée", desc: "Centre-ville, Grande Conche et corniche vers Saint-Palais." },
       { title: "Royan & Palmyre", duration: "Journée", desc: "Matin à Royan, après-midi au zoo et forêt de la Coubre." },
       { title: "Estuaire & Cordouan", duration: "Journée", desc: "Villages ostréicoles, Talmont et embarquement vers le phare." },
+    ],
+    nearby: [
+      { label: "Vaux-sur-Mer", distance: "5 km", duration: "10 min" },
+      { label: "Saint-Georges-de-Didonne", distance: "6 km", duration: "12 min" },
+      { label: "Saint-Palais-sur-Mer", distance: "8 km", duration: "12 min" },
+      { label: "Médis", distance: "8 km", duration: "12 min" },
+      { label: "Saujon", distance: "12 km", duration: "18 min" },
+      { label: "Les Mathes / La Palmyre", distance: "15 km", duration: "20 min" },
+      { label: "Meschers-sur-Gironde", distance: "12 km", duration: "18 min" },
+      { label: "Talmont-sur-Gironde", distance: "18 km", duration: "22 min" },
     ],
   },
   {
@@ -175,6 +222,16 @@ export const destinations: Destination[] = [
       { title: "Grands crus du Cognac", duration: "Journée", desc: "Circuit complet : Grande Champagne, Petite Champagne et Borderies." },
       { title: "Cognac & gastronomie", duration: "Journée", desc: "Visites de chais, déjeuner étoilé ou bistrot charentais, retour en VTC." },
     ],
+    nearby: [
+      { label: "Châteaubernard", distance: "4 km", duration: "8 min" },
+      { label: "Merpins", distance: "6 km", duration: "10 min" },
+      { label: "Boutiers-Saint-Trojan", distance: "5 km", duration: "10 min" },
+      { label: "Gensac-la-Pallue", distance: "8 km", duration: "12 min" },
+      { label: "Jarnac", distance: "13 km", duration: "18 min" },
+      { label: "Segonzac", distance: "12 km", duration: "18 min" },
+      { label: "Bourg-Charente", distance: "10 km", duration: "15 min" },
+      { label: "Saint-Brice", distance: "8 km", duration: "12 min" },
+    ],
   },
   {
     slug: "ile-de-re",
@@ -202,6 +259,16 @@ export const destinations: Destination[] = [
       { title: "Île de Ré essentielle", duration: "Demi-journée", desc: "Saint-Martin, phare des Baleines et halte huîtres." },
       { title: "Tour complet de l'île", duration: "Journée", desc: "Villages, plages, marais salants et coucher de soleil au Port." },
       { title: "La Rochelle & Île de Ré", duration: "Journée", desc: "Transfert pont inclus, circuit combiné ville et île." },
+    ],
+    nearby: [
+      { label: "La Flotte", distance: "5 km", duration: "8 min" },
+      { label: "Rivedoux-Plage", distance: "10 km", duration: "15 min" },
+      { label: "Sainte-Marie-de-Ré", distance: "8 km", duration: "12 min" },
+      { label: "Le Bois-Plage-en-Ré", distance: "8 km", duration: "12 min" },
+      { label: "La Couarde-sur-Mer", distance: "12 km", duration: "18 min" },
+      { label: "Ars-en-Ré", distance: "18 km", duration: "25 min" },
+      { label: "Loix", distance: "16 km", duration: "22 min" },
+      { label: "Les Portes-en-Ré", distance: "22 km", duration: "30 min" },
     ],
   },
   {
@@ -231,6 +298,16 @@ export const destinations: Destination[] = [
       { title: "Tour de l'île", duration: "Journée", desc: "La Cotinière, Salines, Boyardville et plages du sud." },
       { title: "Oléron & Fort Boyard", duration: "Journée", desc: "Circuit île le matin, croisière ou vue sur Fort Boyard l'après-midi." },
     ],
+    nearby: [
+      { label: "Saint-Pierre-d'Oléron", distance: "8 km", duration: "12 min" },
+      { label: "Dolus-d'Oléron", distance: "6 km", duration: "10 min" },
+      { label: "Le Grand-Village-Plage", distance: "8 km", duration: "12 min" },
+      { label: "Saint-Georges-d'Oléron", distance: "12 km", duration: "18 min" },
+      { label: "Saint-Trojan-les-Bains", distance: "10 km", duration: "15 min" },
+      { label: "Boyardville", distance: "14 km", duration: "20 min" },
+      { label: "Saint-Denis-d'Oléron", distance: "18 km", duration: "25 min" },
+      { label: "La Brée-les-Bains", distance: "16 km", duration: "22 min" },
+    ],
   },
   {
     slug: "bordeaux",
@@ -258,6 +335,16 @@ export const destinations: Destination[] = [
       { title: "Bordeaux centre", duration: "Demi-journée", desc: "Miroir d'eau, Grand-Théâtre, quais et déjeuner en centre." },
       { title: "Bordeaux & Saint-Émilion", duration: "Journée", desc: "Matin en ville, après-midi vignobles et dégustation." },
       { title: "Transfert long", duration: "Trajet direct", desc: "La Rochelle ou Royan → Bordeaux centre ou aéroport Mérignac." },
+    ],
+    nearby: [
+      { label: "Mérignac", distance: "10 km", duration: "20 min" },
+      { label: "Pessac", distance: "8 km", duration: "18 min" },
+      { label: "Talence", distance: "6 km", duration: "15 min" },
+      { label: "Bègles", distance: "6 km", duration: "15 min" },
+      { label: "Cenon", distance: "8 km", duration: "18 min" },
+      { label: "Libourne", distance: "35 km", duration: "40 min" },
+      { label: "Saint-Émilion", distance: "40 km", duration: "45 min" },
+      { label: "Arcachon", distance: "60 km", duration: "55 min" },
     ],
   },
   {
@@ -287,6 +374,16 @@ export const destinations: Destination[] = [
       { title: "Nantes & Loire", duration: "Journée", desc: "Ville le matin, Trentemoult ou vignobles nantais l'après-midi." },
       { title: "Transfert aéroport", duration: "Trajet direct", desc: "Charente-Maritime → Nantes Atlantique ou gare TGV." },
     ],
+    nearby: [
+      { label: "Rezé", distance: "6 km", duration: "15 min" },
+      { label: "Saint-Herblain", distance: "8 km", duration: "18 min" },
+      { label: "Orvault", distance: "8 km", duration: "18 min" },
+      { label: "Vertou", distance: "10 km", duration: "20 min" },
+      { label: "Bouguenais", distance: "12 km", duration: "20 min" },
+      { label: "Carquefou", distance: "12 km", duration: "20 min" },
+      { label: "Sainte-Luce-sur-Loire", distance: "10 km", duration: "18 min" },
+      { label: "Trentemoult", distance: "8 km", duration: "15 min" },
+    ],
   },
   {
     slug: "paris",
@@ -314,6 +411,16 @@ export const destinations: Destination[] = [
       { title: "Trajet direct", duration: "Aller simple", desc: "La Rochelle, Saintes ou Royan → Paris centre ou banlieue." },
       { title: "Aller-retour business", duration: "1–2 jours", desc: "Départ matinal, retour sur rendez-vous, véhicule premium garanti." },
       { title: "Paris & aéroport", duration: "Sur mesure", desc: "Trajet long puis transfert CDG/Orly pour votre correspondance." },
+    ],
+    nearby: [
+      { label: "La Défense", distance: "10 km", duration: "25 min" },
+      { label: "Boulogne-Billancourt", distance: "8 km", duration: "25 min" },
+      { label: "Neuilly-sur-Seine", distance: "8 km", duration: "20 min" },
+      { label: "Saint-Denis", distance: "10 km", duration: "25 min" },
+      { label: "Versailles", distance: "20 km", duration: "35 min" },
+      { label: "Orly", distance: "15 km", duration: "30 min" },
+      { label: "Roissy-CDG", distance: "25 km", duration: "40 min" },
+      { label: "Saint-Germain-en-Laye", distance: "25 km", duration: "40 min" },
     ],
   },
 ];

@@ -137,7 +137,7 @@ export const services: Service[] = [
     ],
     highlights: [
       "Coordination événementielle",
-      "Flotte Mercedes Classe S",
+      "Lexus ES 300h, Classe V & Tesla",
       "Chauffeur en tenue sobre",
       "Navettes multi-véhicules",
       "Devis personnalisé",
