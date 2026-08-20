@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@font-face {
+  font-family: "Tomato Grotesk Extra Light";
+  src: url("/assets/fonts/woff2/Tomato Grotesk Extra Light.woff2") format("woff2"),
+    url("/assets/fonts/woff/Tomato Grotesk Extra Light.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tomato Grotesk Light";
+  src: url("/assets/fonts/woff2/Tomato Grotesk Light.woff2") format("woff2"),
+    url("/assets/fonts/woff/Tomato Grotesk Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-white: #ffffff;
+  --color-rojo: #f32735;
+  --color-azul: #011c4d;
+  --color-gris: #d5d5d5;
+  --color-page: #0d0d0d;
+  --font-type1: "Tomato Grotesk Extra Light", sans-serif;
+  --font-type2: "Tomato Grotesk Light", sans-serif;
+}
+
+@keyframes scroll-arrow-1 {
+  0% {
+    margin-top: -1.5vw;
+    opacity: 0;
+  }
+  30%,
+  100% {
+    margin-top: -0.5vw;
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-arrow-2 {
+  0% {
+    margin-top: -0.5vw;
+  }
+  30%,
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-arrow-3 {
+  0% {
+    margin-top: 0;
+    opacity: 1;
+  }
+  30%,
+  100% {
+    margin-top: 0.5vw;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  40%,
+  100% {
+    opacity: 1;
+  }
+  10%,
+  30% {
+    opacity: 0;
+  }
+}
+
+/* Vimeo iframe injected into #hero-video */
+#hero-video iframe {
+  width: 100vw;
+  height: 52.73vw;
+  min-height: 100vh;
+  min-width: 189.63vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* GSAP toggleClass hooks */
+#logo.blue svg path {
+  fill: var(--color-white);
+}
+
+nav.blue {
+  color: var(--color-white);
+}
+
+#hero-text.blue {
+  color: var(--color-white);
+}
+
+#mobile-menu-button.blue span {
+  background: var(--color-white);
+}
+
+.scrollbar-track-y {
+  background: transparent !important;
+  height: calc(100% - 6px) !important;
+  margin: 3px;
+}
+
+.scrollbar-thumb {
+  background: var(--color-white) !important;
+  opacity: 0.3;
+}
