@@ -9,9 +9,14 @@ gsap.registerPlugin(ScrollTrigger);
 const SCROLLER = ".scroller";
 const WHEEL_ROTATION_DEG_PER_UNIT = 0.046;
 const MODEL_SCALE = 9;
+const MD_BREAKPOINT = 768;
+const MOBILE_SCALE_RATIO = 0.75;
 const MODEL_POSITION_X = 0;
 const MODEL_POSITION_Y = 0;
 const MODEL_POSITION_Z = 0;
+const MOBILE_MODEL_POSITION_X = -1950;
+const MOBILE_MODEL_POSITION_Y = 0;
+const MOBILE_MODEL_POSITION_Z = 300;
 const MODEL_ROTATION_X_DEG = 0;
 const MODEL_ROTATION_Y_DEG = 80;
 const MODEL_ROTATION_Z_DEG = 0;
@@ -21,6 +26,49 @@ const SHADOW_DEPTH = 180;
 const SHADOW_Y_OFFSET = 0;
 const SHADOW_OPACITY = 0.3;
 const SHADOW_SCALE = 1.2;
+
+function isBelowMdViewport() {
+  return window.innerWidth < MD_BREAKPOINT;
+}
+
+function getResponsiveScale(baseScale: number) {
+  return isBelowMdViewport() ? baseScale * MOBILE_SCALE_RATIO : baseScale;
+}
+
+function getResponsiveModelPosition() {
+  if (isBelowMdViewport()) {
+    return {
+      x: MOBILE_MODEL_POSITION_X,
+      y: MOBILE_MODEL_POSITION_Y,
+      z: MOBILE_MODEL_POSITION_Z,
+    };
+  }
+
+  return {
+    x: MODEL_POSITION_X,
+    y: MODEL_POSITION_Y,
+    z: MODEL_POSITION_Z,
+  };
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function applyModelGroupLayout(modelGroup: any) {
+  const scale = getResponsiveScale(MODEL_SCALE);
+  const position = getResponsiveModelPosition();
+  modelGroup.scale.set(scale, scale, scale);
+  modelGroup.position.set(position.x, position.y, position.z);
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function applyModelGroupScale(modelGroup: any) {
+  applyModelGroupLayout(modelGroup);
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function applyShadowScale(shadow: any) {
+  if (!shadow) return;
+  shadow.scale.setScalar(getResponsiveScale(SHADOW_SCALE));
+}
 
 function lexusScrollTrigger(config: ScrollTrigger.Vars) {
   return { ...config, scroller: SCROLLER };
@@ -95,7 +143,11 @@ export function updateLexusWheelsFromGsap(scene: any) {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function addLexusShadowPlane(THREE: any, parent: any) {
+function addLexusShadowPlane(
+  THREE: any,
+  parent: any,
+  onShadowReady?: (shadow: any) => void,
+) {
   const textureLoader = new THREE.TextureLoader();
   textureLoader.load(SHADOW_TEXTURE_PATH, (texture: any) => {
     texture.encoding = THREE.sRGBEncoding;
@@ -114,9 +166,10 @@ function addLexusShadowPlane(THREE: any, parent: any) {
     shadow.name = "lexus-shadow";
     shadow.rotation.x = -Math.PI / 2;
     shadow.position.y = SHADOW_Y_OFFSET;
-    shadow.scale.setScalar(SHADOW_SCALE);
+    shadow.scale.setScalar(getResponsiveScale(SHADOW_SCALE));
     shadow.renderOrder = -1;
     parent.add(shadow);
+    onShadowReady?.(shadow);
   });
 }
 
@@ -289,7 +342,7 @@ export function registerLexusScrollAnimations(scene: any) {
     }));
     gsap.to(scene.position, lexusGsapVars(scene, {
       scrollTrigger: lexusScrollTrigger({ trigger: "#closing", scrub: 0.2, start: "start 95%", end: "start 75%" }),
-      z: 1720,
+      z: 520,
       ease: "power4.inOut",
       immediateRender: false,
     }));
@@ -310,14 +363,14 @@ export async function initLexusScene(container: HTMLElement) {
   let frameId = 0;
   let frontWheels: any = null;
   let rearWheels: any = null;
+  let lexusShadow: any = null;
 
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 10, 20000);
   camera.position.set(5200, 300, 0);
 
   const scene = new THREE.Scene();
   const modelGroup = new THREE.Group();
-  modelGroup.position.set(MODEL_POSITION_X, MODEL_POSITION_Y, MODEL_POSITION_Z);
-  modelGroup.scale.set(MODEL_SCALE, MODEL_SCALE, MODEL_SCALE);
+  applyModelGroupLayout(modelGroup);
   modelGroup.rotation.set(
     MathUtils.degToRad(MODEL_ROTATION_X_DEG),
     MathUtils.degToRad(MODEL_ROTATION_Y_DEG),
@@ -357,7 +410,9 @@ export async function initLexusScene(container: HTMLElement) {
             mixer.clipAction(gltf.animations[0]).play();
           }
           modelGroup.add(decomposed.car);
-          addLexusShadowPlane(THREE, decomposed.car);
+          addLexusShadowPlane(THREE, decomposed.car, (shadow) => {
+            lexusShadow = shadow;
+          });
           ScrollTrigger.refresh();
         },
         undefined,
@@ -397,6 +452,8 @@ export async function initLexusScene(container: HTMLElement) {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    applyModelGroupLayout(modelGroup);
+    applyShadowScale(lexusShadow);
   };
 
   const animate = () => {

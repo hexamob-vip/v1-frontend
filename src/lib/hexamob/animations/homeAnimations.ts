@@ -1,4 +1,3 @@
-import Player from "@vimeo/player";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getScrollbar } from "@/lib/hexamob/animations/setupScroll";
@@ -12,24 +11,7 @@ export function initHomeAnimations() {
   const isDesktop = window.innerWidth > 1024;
   const kilometersNum = document.getElementById("kilometers-num");
 
-  const playHomeVideo = async (videoId: number) => {
-    const target = document.getElementById("hero-video");
-    if (!target) return;
-
-    const player = new Player(target, {
-      id: videoId,
-      width: 640,
-      controls: false,
-      loop: true,
-    });
-
-    await player.setVolume(0);
-    await player.play();
-    gsap.to("#hero-video", { autoAlpha: 0.8, duration: 1 });
-  };
-
   if (isDesktop) {
-    void playHomeVideo(907416685);
 
     gsap.to(".arrow", {
       scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom 1%", scrub: 0.2 },
@@ -116,7 +98,7 @@ export function initHomeAnimations() {
         scrollTrigger: { trigger: "#punctuality", start: "top 0", end: "top -80%", scrub: true },
       })
       .to(num, {
-        var: 1400,
+        var: 100000,
         duration: 1,
         ease: "none",
         onUpdate: () => {
@@ -239,8 +221,6 @@ export function initHomeAnimations() {
       ease: "linear",
     });
   } else {
-    void playHomeVideo(907416685);
-
     ScrollTrigger.create({
       trigger: "#section-two",
       start: "top 5%",
@@ -259,7 +239,7 @@ export function initHomeAnimations() {
     gsap
       .timeline({ scrollTrigger: punctualityScroll })
       .to(num, {
-        var: 1400,
+        var: 100000,
         duration: 1,
         ease: "none",
         onUpdate: () => {
@@ -297,7 +277,7 @@ export function initHomeAnimations() {
     ScrollTrigger.create({ trigger: "#stats", start: "top 0", end: "top -130%", pin: true });
     gsap.to("#stats-strip-inner", {
       scrollTrigger: { trigger: "#mark1", start: "top -10%", end: "top -120%", scrub: 0.2 },
-      x: -window.innerWidth * 3.4,
+      x: -window.innerWidth * 2.9,
       immediateRender: false,
       ease: "power2.inOut",
     });
@@ -314,8 +294,8 @@ export function initHomeAnimations() {
     });
     ScrollTrigger.create({ trigger: "#digitalization", start: "top 0", end: "top -130%", pin: true });
     gsap.to("#feature-points", {
-      scrollTrigger: { trigger: "#gap2", start: "top -210%", end: "top -300%", scrub: 0.2 },
-      x: -window.innerWidth * 1.6,
+      scrollTrigger: { trigger: "#gap2", start: "top -100%", end: "top -190%", scrub: 0.2 },
+      x: -window.innerWidth * 2.2,
       immediateRender: false,
       ease: "power2.inOut",
     });

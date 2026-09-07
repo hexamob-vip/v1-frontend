@@ -42,6 +42,34 @@ const staticPages: SeoPage[] = [
     changeFrequency: "weekly",
     priority: 0.9,
   },
+  {
+    path: "/mentions-legales",
+    title: "Mentions légales",
+    description: "Informations légales du site HEXAMOB : éditeur, directeur de publication et hébergement.",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    path: "/conditions-generales",
+    title: "Conditions générales",
+    description: "Conditions générales HEXAMOB : réservation, acompte de 15 % et prestations VTC.",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    path: "/confidentialite",
+    title: "Politique de confidentialité",
+    description: "Politique de confidentialité HEXAMOB : données personnelles, cookies et droits RGPD.",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    path: "/contact",
+    title: "Contact",
+    description: "Formulaire de contact HEXAMOB pour réservations VTC, devis et demandes d'information.",
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
 ];
 
 const servicePages: SeoPage[] = services.map((service) => ({

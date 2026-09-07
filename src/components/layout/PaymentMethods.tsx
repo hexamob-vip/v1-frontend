@@ -163,12 +163,17 @@ const GooglePayIcon = () => (
   </svg>
 );
 
-const paymentMethods = [
+{/*const paymentMethods = [
   { label: "Mastercard", icon: MastercardIcon },
   { label: "Visa", icon: VisaIcon },
   { label: "PayPal", icon: PaypalIcon },
   { label: "Apple Pay", icon: ApplePayIcon },
   { label: "Google Pay", icon: GooglePayIcon },
+];*/}
+
+const paymentMethods = [
+  { label: "Mastercard", icon: MastercardIcon },
+  { label: "Visa", icon: VisaIcon },
 ];
 
 export default function PaymentMethods() {

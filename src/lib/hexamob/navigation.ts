@@ -36,20 +36,35 @@ export const serviceLinks = [
   },
 ] as const;
 
-export const footerLinks = [
-  { href: "https://hexamob.com/certificaciones/", label: "CERTIFICATIONS" },
-  { href: "https://hexamob.com/aviso-legal/", label: "MENTIONS LÉGALES" },
-  { href: "https://hexamob.com/proteccion-de-datos/", label: "PROTECTION DES DONNÉES" },
-  {
-    href: "mailto:environment@hexamob.com?subject=Demande%20de%20politique%20SIG&body=Je%20souhaite%20demander%20la%20politique%20SIG.",
-    label: "POLITIQUE SIG",
-  },
-  { href: "https://hexamob.com/politica-privacidad/", label: "COOKIES" },
-  { href: "https://hexamob.com/compliance/", label: "CONFORMITÉ" },
-  {
-    href: "https://centinela.lefebvre.es/public/concept/2314141?access=V9suRVKLOr1b8hYK%2BlQHoyoAw2bCHMVYiDot8oJoK0Q%3D",
-    label: "CANAL DE SIGNALEMENT",
-    external: true,
-  },
-  { href: "https://hexamob.com/next-generation-eu/", label: "Next Generation EU" },
-] as const;
+export type FooterLink =
+  | { href: string; label: string; external?: boolean }
+  | { label: string; action: "cookies" };
+
+export const footerGeneralLinks: FooterLink[] = [
+  { href: "/", label: "ACCUEIL" },
+  { href: "/entreprise", label: "ENTREPRISE" },
+  { href: "/services", label: "SERVICES" },
+];
+
+export const footerLegalLinks: FooterLink[] = [
+  { href: "/contact", label: "CONTACTEZ-NOUS" },
+  { href: "/mentions-legales", label: "MENTIONS LÉGALES" },
+  { href: "/conditions-generales", label: "CONDITIONS GÉNÉRALES" },
+  { label: "COOKIES", action: "cookies" },
+  { href: "/confidentialite", label: "CONFIDENTIALITÉ" },
+];
+
+export const footerServiceLinks: FooterLink[] = serviceLinks
+  .filter((link) => link.href !== "/services")
+  .map((link) => ({
+    href: link.href,
+    label: link.label.toUpperCase(),
+  }));
+
+export const footerActionLinks: FooterLink[] = [
+  { href: "/evenements-speciaux", label: "ÉVÉNEMENTS SPÉCIAUX" },
+  { href: "/contact", label: "RÉSERVER UNE COURSE" },
+];
+
+/** @deprecated Use footerLegalLinks */
+export const footerLinks = footerLegalLinks;

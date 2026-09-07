@@ -76,8 +76,7 @@
   }
 }
 
-/* Vimeo iframe injected into #hero-video */
-#hero-video iframe {
+#hero-video video {
   width: 100vw;
   height: 52.73vw;
   min-height: 100vh;
@@ -86,6 +85,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  object-fit: cover;
   pointer-events: none;
 }
 

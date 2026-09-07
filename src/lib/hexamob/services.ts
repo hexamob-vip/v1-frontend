@@ -41,7 +41,7 @@ export const services: Service[] = [
       },
       {
         title: "Transferts gare",
-        desc: "Gares de La Rochelle, Saintes, Royan, Rochefort — prise en charge ponctuelle à quai ou devant l'entrée principale.",
+        desc: "Gares de La Rochelle, Saintes, Surgères,Royan, Rochefort — prise en charge ponctuelle à quai ou devant l'entrée principale.",
       },
       {
         title: "Centre-ville & hôtels",
@@ -60,7 +60,7 @@ export const services: Service[] = [
       "Eau et Wi-Fi à bord",
       "Facturation entreprise",
     ],
-    destinations: ["La Rochelle", "Saintes", "Rochefort", "Royan", "Cognac", "Île de Ré"],
+    destinations: ["La Rochelle", "Saintes", "Rochefort", "Royan", "Cognac", "Île de Ré", "Île d'Oléron", "Surgères"],
   },
   {
     slug: "trajets-longs",
@@ -72,7 +72,7 @@ export const services: Service[] = [
     cardImage: "/assets/images/hexamob-vtc-chauffeur-privee-rochefort-charente.jpg",
     tagline: "Interurbains & grandes distances",
     description:
-      "Voyages confortables vers Bordeaux, Nantes, Paris et toutes les destinations de Charente-Maritime avec chauffeur professionnel.",
+      "Voyages confortables vers Bordeaux, Nantes, Paris, France entière et toutes les destinations de Charente-Maritime avec chauffeur professionnel.",
     intro:
       "Pour vos trajets interurbains, HEXAMOB vous propose un transport premium sur grande distance. Reposez-vous à bord de véhicules haut de gamme pendant que votre chauffeur optimise l'itinéraire. Idéal pour les déplacements d'affaires, les week-ends ou les connexions aéroport sur de longues distances.",
     features: [
@@ -89,8 +89,8 @@ export const services: Service[] = [
         desc: "Trajets interurbains vers la capitale — voyage de nuit ou de jour, pauses sur demande, service haut de gamme garanti.",
       },
       {
-        title: "Charente-Maritime",
-        desc: "La Rochelle, Royan, Saintes, Cognac, l'Île de Ré et l'Île d'Oléron — circuits sur mesure dans le département.",
+        title: "France entière",
+        desc: "Bayonne, Angers, Tours, Arcachon, Angoulême, Limoges, Poitiers, Toulouse, Cognac — circuits sur mesure dans dans toute la france.",
       },
     ],
     highlights: [
@@ -101,7 +101,19 @@ export const services: Service[] = [
       "Multi-passagers",
       "Bagages volumineux",
     ],
-    destinations: ["Bordeaux", "Nantes", "Paris", "La Rochelle", "Cognac", "Île d'Oléron"],
+    destinations: [
+      "Bordeaux",
+      "Nantes",
+      "Paris",
+      "Cognac",
+      "Bayonne",
+      "Angers",
+      "Tours",
+      "Arcachon",
+      "Limoges",
+      "Poitiers",
+      "Toulouse",
+    ],
   },
   {
     slug: "sur-mesure",
@@ -183,7 +195,7 @@ export const services: Service[] = [
       "Multi-langues",
       "Groupes & familles",
     ],
-    destinations: ["Cognac", "La Rochelle", "Île de Ré", "Royan", "Saintes", "Île d'Oléron"],
+    destinations: ["Cognac", "La Rochelle", "Île de Ré", "Royan", "Saintes", "Île d'Oléron", "Surgères"],
   },
   {
     slug: "entreprises",

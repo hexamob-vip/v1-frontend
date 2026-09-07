@@ -12,9 +12,9 @@ import { initServicesAnimations } from "@/lib/hexamob/animations/servicesAnimati
 import { services } from "@/lib/hexamob/services";
 
 const stats = [
-  { num: "+ 10 000", desc: "prestations VTC par an" },
+  { num: "+ 500", desc: "prestations VTC par an" },
   { num: "+ 6", desc: "ans d'expérience" },
-  { num: "24/7", desc: "disponibilité" },
+  { num: "+ 1000", desc: "clients desservis" },
   { num: "5", desc: "gammes de services" },
 ];
 

@@ -26,12 +26,11 @@ import {
 } from "@/lib/hexamob/destinations";
 
 const stats = [
-  { num: "+ 10 000", desc: "prestations VTC premium réalisées chaque année" },
+  { num: "+ 500", desc: "prestations VTC premium réalisées chaque année" },
   { num: "+ 6", desc: "ans d'expérience VTC" },
-  { num: "+ 100", desc: "véhicules entretenus" },
+  { num: "+ 1000", desc: "clients desservis" },
   { num: "+ 24/7", desc: "disponibilité service client" },
-  { num: "+ 10", desc: "langues de service client" },
-  { num: "+ 6", desc: "destinations en Charente-Maritime" },
+  { num: "+ 100", desc: "destinations en Charente-Maritime" },
 ];
 
 const GOOGLE_REVIEWS_URL = "https://share.google/qc9ExEeMCDaHKjPDm";
@@ -147,8 +146,22 @@ export default function HomePage() {
             <div className="preload" />
             <div
               id="hero-video"
-              className="pointer-events-none absolute left-0 top-0 z-[9] h-screen w-screen overflow-hidden opacity-75"
-            />
+              className="pointer-events-none absolute left-0 top-0 z-[9] h-screen w-screen overflow-hidden opacity-40"
+            >
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-hidden="true"
+              >
+                <source
+                  src="/assets/videos/hexamob-chaffeur-vtc-charente-maritime-rochefort.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
             <div
               className="arrow absolute z-[99] h-[70vh] w-[70vh] rotate-[135deg] bg-gradient-to-br from-gold-800/50 via-transparent to-transparent opacity-80 max-lg:h-[50vh] max-lg:w-[50vh]"
               id="arrow_1"
@@ -250,7 +263,7 @@ export default function HomePage() {
               <h3 className={h3Class}>TRAJETS LONGS</h3>
               <article className="ml-[3vw] w-[30vw] max-lg:ml-0 max-lg:mt-[2vw] max-lg:w-[84vw]">
                 Trajets en Charente-Maritime : La Rochelle, Royan, Saintes,
-                Cognac, l&apos;Île de Ré et l&apos;Île d&apos;Oléron. Voyages
+                Cognac, Surgères, l&apos;Île de Ré et l&apos;Île d&apos;Oléron. Voyages
                 confortables sur grande distance avec chauffeur professionnel,
                 véhicule premium entretenu et service ponctuel adapté à vos
                 horaires.
@@ -354,7 +367,7 @@ export default function HomePage() {
                 style={{ textShadow: "0 0 10px rgba(0, 0, 0, 1)" }}
               >
                 Nous proposons des trajets vers La Rochelle, Royan, Saintes,
-                Cognac, l&apos;Île de Ré et l&apos;Île d&apos;Oléron, des
+                Cognac, Surgères, l&apos;Île de Ré et l&apos;Île d&apos;Oléron, des
                 transferts standards aéroport, gare et centre-ville, en
                 respectant les exigences spécifiques de chaque client.
               </article>
@@ -374,6 +387,7 @@ export default function HomePage() {
                   d="M512,1023.5c-69.1,0-136-13.5-199.1-40.2c-60.9-25.8-115.6-62.6-162.6-109.6c-47-47-83.9-101.7-109.6-162.6 C14,648,0.5,581.1,0.5,512c0-69.1,13.5-136,40.2-199.1c25.8-60.9,62.6-115.6,109.6-162.6c47-47,101.7-83.9,162.6-109.6 C376,14,442.9,0.5,512,0.5c69.1,0,136,13.5,199.1,40.2c60.9,25.8,115.6,62.6,162.6,109.6c47,47,83.9,101.7,109.6,162.6 c26.7,63.1,40.2,130,40.2,199.1c0,69.1-13.5,136-40.2,199.1c-25.8,60.9-62.6,115.6-109.6,162.6c-47,47-101.7,83.9-162.6,109.6 C648,1010,581.1,1023.5,512,1023.5z"
                 />
               </svg>
+              +
               <div id="kilometers-num" className="mr-[1vw] inline">
                 0
               </div>
@@ -383,9 +397,9 @@ export default function HomePage() {
                 className="absolute top-[12vw] text-[1vw] uppercase text-goldhigh-500 opacity-0 max-lg:top-[29vw] max-lg:text-[3vw]"
               >
                 <div id="hours-num" className="mr-[0.5vw] inline">
-                  19
+                  par
                 </div>
-                heures
+                an
               </div>
             </div>
           </section>
@@ -485,21 +499,21 @@ export default function HomePage() {
             </article>
             <div
               id="stats-strip"
-              className="h-[18vw] w-screen overflow-hidden max-lg:h-[23vh]"
+              className="h-[18vw] w-screen overflow-hidden max-lg:h-auto max-lg:min-h-[32vh] max-lg:py-[4vw]"
             >
               <div
                 id="stats-strip-inner"
-                className="flex w-[300vw] max-lg:w-[620vw]"
+                className="flex w-[300vw] items-center max-lg:w-[620vw]"
               >
                 {stats.map((item) => (
                   <div
                     key={item.num}
-                    className="stat-item mr-[3vw] flex flex-col items-end p-[3vw]"
+                    className="stat-item mr-[3vw] flex w-[40vw] shrink-0 flex-col items-end justify-center p-[3vw] max-lg:w-[62vw]"
                   >
-                    <div className="num text-[10vw] leading-none text-white max-lg:text-[25vw]">
+                    <div className="num text-[10vw] leading-none text-white max-lg:text-[18vw]">
                       {item.num}
                     </div>
-                    <div className="desc leading-none text-white max-lg:mt-[25vw] max-lg:w-[50vw] max-lg:text-right">
+                    <div className="desc mt-[0.5vw] max-w-[36vw] text-right text-[0.9vw] leading-snug text-white max-lg:mt-[2vw] max-lg:max-w-[58vw] max-lg:text-[3.2vw]">
                       {item.desc}
                     </div>
                   </div>
@@ -522,17 +536,6 @@ export default function HomePage() {
                 Nous misons sur un service VTC premium
               </h2>
               <article>
-                HEXAMOB renforce son engagement en faveur d&apos;un service VTC
-                premium grâce à plusieurs initiatives majeures : flotte de
-                véhicules haut de gamme régulièrement entretenus ; chauffeurs
-                formés aux standards les plus exigeants ; circuits touristiques
-                personnalisés en Charente-Maritime, comme le tour des vignobles
-                de Cognac ; et solutions entreprise avec abonnements, trajets
-                réguliers et gestion de flotte. Chaque prestation allie confort,
-                ponctualité et élégance pour un transport durable, responsable,
-                premium et fiable.
-                <br />
-                <br />
                 HEXAMOB propose des visites guidées en VTC et circuits
                 personnalisés pour les touristes, des services sur mesure pour
                 mariages et événements, et des solutions entreprise :
@@ -540,7 +543,7 @@ export default function HomePage() {
                 service, véhicules entretenus et chauffeurs formés garantissent
                 une expérience premium. Nos trajets standards couvrent aéroport,
                 gare et centre-ville ; nous desservons La Rochelle, Royan,
-                Saintes, Cognac, l&apos;Île de Ré et l&apos;Île d&apos;Oléron.
+                Saintes, Cognac, Surgères, l&apos;Île de Ré et l&apos;Île d&apos;Oléron.
               </article>
             </div>
             <div className="feature-block electric lg:absolute lg:left-[11vw] lg:top-[20vw] w-[30vw] max-lg:relative max-lg:left-0 max-lg:top-12 max-lg:w-full max-lg:px-[3vw] [&_img]:aspect-[3/4] [&_img]:w-full [&_img]:object-cover overflow-hidden rounded-xl">
@@ -566,11 +569,9 @@ export default function HomePage() {
             >
               <section
                 id="digitalization"
-                className={`relative flex lg:h-screen w-screen lg:overflow-hidden flex-col items-start justify-center max-lg:justify-start`}
+                className={`${sectionCenterClass} max-lg:overflow-x-clip max-lg:overflow-y-visible`}
               >
-                <h3
-                  className={`${h3Class} px-[3vw] max-lg:mt-[16vw] max-lg:w-[70vw]`}
-                >
+                <h3 className={`${h3Class} px-[3vw] max-lg:w-[70vw]`}>
                   Digitalisation
                 </h3>
                 <h2 className={`${titleClass} w-[50vw] max-lg:w-[80vw]`}>
@@ -582,7 +583,7 @@ export default function HomePage() {
                 </h2>
                 <div
                   id="feature-points"
-                  className="flex w-[60vw] flex-wrap max-lg:mt-0 max-lg:w-[400vw]"
+                  className="flex w-[60vw] flex-wrap max-lg:my-[4vw] max-lg:w-[400vw]"
                 >
                   {[
                     [
@@ -619,7 +620,7 @@ export default function HomePage() {
                 </div>
                 <div
                   id="gps"
-                  className="block lg:absolute lg:right-0 lg:top-[15vh] h-[52vw] lg:h-[75vh] w-full lg:w-[56vw]"
+                  className="mx-[3vw] h-[52vw] w-[94vw] shrink-0 lg:absolute lg:right-0 lg:top-[15vh] lg:mx-0 lg:h-[75vh] lg:w-[56vw]"
                 >
                   <img
                     src="/assets/images/ipad_iphone.png"
@@ -671,7 +672,7 @@ export default function HomePage() {
           >
             <div
               id="destinations"
-              className="mx-[3vw] flex justify-between py-[2vw] uppercase max-lg:flex-wrap max-lg:text-[92%] max-lg:[&_a]:p-[1vw]"
+              className="mx-[3vw] flex gap-x-[1vw] justify-center lg:justify-between py-[2vw] uppercase max-lg:flex-wrap max-lg:text-[92%] max-lg:[&_a]:p-[1vw]"
             >
               {stripDestinations.map((city) => {
                 const destination = getDestinationByLabel(city);

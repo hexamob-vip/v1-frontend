@@ -33,7 +33,7 @@ const timeline = [
   {
     year: String(new Date().getFullYear()),
     title: "Une équipe engagée",
-    text: "Des chauffeurs formés aux standards les plus exigeants, une flotte entretenue avec rigueur et une équipe disponible 24/7 en font le partenaire VTC de confiance pour La Rochelle, Royan, Saintes, Cognac et au-delà.",
+    text: "Des chauffeurs formés aux standards les plus exigeants, une flotte entretenue avec rigueur et une équipe disponible 24/7 en font le partenaire VTC de confiance pour La Rochelle, Royan, Saintes, Cognac, Surgères et au-delà.",
   },
 ];
 
