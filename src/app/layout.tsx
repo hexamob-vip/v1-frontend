@@ -1,13 +1,33 @@
 import type { Metadata, Viewport } from "next";
 import CookieConsent from "@/components/layout/CookieConsent";
 import DeviceSizeIndicator from "@/components/layout/DeviceSizeIndicator";
-import { getSiteUrl, siteDescription, siteName } from "@/lib/hexamob/site";
+import {
+  defaultOgImage,
+  defaultOgImagePath,
+  getSiteUrl,
+  siteDescription,
+  siteName,
+} from "@/lib/hexamob/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: siteName,
   description: siteDescription,
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName,
+    title: siteName,
+    description: siteDescription,
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [defaultOgImagePath],
+  },
 };
 
 export const viewport: Viewport = {

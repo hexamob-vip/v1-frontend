@@ -5,6 +5,15 @@ export const siteName = "HEXAMOB - Chauffeur VTC Premium";
 export const siteDescription =
   "HEXAMOB est une société VTC premium en Charente-Maritime, spécialisée dans le transport avec chauffeur depuis 2020.";
 
+export const defaultOgImagePath = "/assets/images/default.jpg";
+
+export const defaultOgImage = {
+  url: defaultOgImagePath,
+  width: 1920,
+  height: 1080,
+  alt: siteName,
+} as const;
+
 export function getSiteUrl(): string {
   const configured =
     process.env.NEXT_PUBLIC_SITE_URL?.trim() ||

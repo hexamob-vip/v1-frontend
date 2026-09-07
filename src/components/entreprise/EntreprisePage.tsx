@@ -9,16 +9,6 @@ import HexamobButton from "@/components/layout/HexamobButton";
 import { bootPageScroll } from "@/lib/hexamob/animations/bootPageScroll";
 import { initEntrepriseAnimations } from "@/lib/hexamob/animations/entrepriseAnimations";
 
-const certBadges = [
-  "/assets/seals/GDP.png",
-  "/assets/seals/9001.png",
-  "/assets/seals/14001.png",
-  "/assets/seals/45001.png",
-  "/assets/seals/39001.png",
-  "/assets/seals/sqas.png",
-  "/uploads/2025/05/ifs-logo.png",
-];
-
 const timeline = [
   {
     year: "2020",
@@ -33,7 +23,7 @@ const timeline = [
   {
     year: String(new Date().getFullYear()),
     title: "Une équipe engagée",
-    text: "Des chauffeurs formés aux standards les plus exigeants, une flotte entretenue avec rigueur et une équipe disponible 24/7 en font le partenaire VTC de confiance pour La Rochelle, Royan, Saintes, Cognac, Surgères et au-delà.",
+    text: "Des chauffeurs formés aux standards les plus exigeants, une flotte entretenue avec rigueur et une équipe disponible 24/7 en font le partenaire VTC de confiance pour Rochefort, La Rochelle, Royan, Saintes, Surgères et au-delà.",
   },
 ];
 
@@ -85,21 +75,21 @@ const fleet = [
     tagline: "Élégance hybride",
     desc: "Notre berline phare : confort silencieux et motorisation hybride pour vos trajets quotidiens, transferts aéroport, déplacements professionnels et événements. L'alliance du raffinement et de la responsabilité.",
     specs: ["4 places", "Hybride", "Confort premium"],
-    image: "/assets/images/hexamob-vtc-chauffeur-privee-rochefort-charente.jpg",
+    image: "/assets/images/hexamob-vtc-chauffeur-haut-gamme-la-rochelle-02.jpg",
   },
   {
     name: "Mercedes Classe V",
     tagline: "Petits groupes — ou équivalent",
     desc: "Van premium pour vos petits groupes : familles, EVG, navettes invités et déplacements à plusieurs. Espace, confort et discrétion, avec un véhicule équivalent selon disponibilité.",
     specs: ["Jusqu'à 7 places", "Grand volume bagages", "Idéal groupes"],
-    image: "/assets/img/group.jpg",
+    image: "/assets/cars/hexamob-mercedes-classe-v-vtc-charente.jpg",
   },
   {
     name: "Tesla Model 3 2026",
     tagline: "100 % électrique",
     desc: "La dernière génération Tesla pour un trajet silencieux, technologique et responsable. Idéale pour les transferts urbains, aéroport et déplacements professionnels au quotidien.",
     specs: ["4 places", "100 % électrique", "Modèle 2026"],
-    image: "/assets/img/hexamob-electric.jpg",
+    image: "/assets/cars/hexamob-tesla-y-vtc-charente.jpg",
   },
 ];
 
@@ -281,17 +271,6 @@ export default function EntreprisePage() {
                 <div key={cert.title} className="cert-item border border-white/10 p-[2vw] max-lg:p-[4vw] rounded-xl backdrop-blur-lg bg-page/40">
                   <h3 className={`${h3Class} mb-[1.5vw]`}>{cert.title}</h3>
                   <p className="text-white/70">{cert.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            <div id="cert-grid" className="mx-[3vw] mt-[6vw] flex flex-wrap items-center gap-[2vw] max-lg:mt-[10vw]">
-              {certBadges.map((src) => (
-                <div
-                  key={src}
-                  className="cert-item flex h-[5vw] w-[5vw] items-center max-lg:h-[16vw] max-lg:w-[16vw]"
-                >
-                  <img src={src} alt="" className="h-auto w-full mix-blend-multiply brightness-200" />
                 </div>
               ))}
             </div>

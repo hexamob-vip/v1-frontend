@@ -50,19 +50,6 @@ export function initEntrepriseAnimations() {
     });
   });
 
-  gsap.from("#cert-grid .cert-item", {
-    scrollTrigger: {
-      trigger: "#cert-grid",
-      start: "top 75%",
-      toggleActions: "play none none reverse",
-    },
-    scale: 0.85,
-    autoAlpha: 0,
-    duration: 0.5,
-    stagger: 0.08,
-    ease: "Back.out(1.4)",
-  });
-
   gsap.utils.toArray<HTMLElement>(".destination-banner").forEach((banner) => {
     const media = banner.querySelector<HTMLElement>(".destination-banner-media");
     if (!media) return;
