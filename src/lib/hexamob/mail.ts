@@ -1,13 +1,14 @@
 import nodemailer from "nodemailer";
+import {
+  buildAdminContactEmailHtml,
+  buildAdminContactEmailText,
+  buildClientConfirmationEmailHtml,
+  buildClientConfirmationEmailText,
+  type ContactEmailContent,
+} from "@/lib/hexamob/contact-email-templates";
 import { companyLegal } from "@/lib/hexamob/legal";
 
-type ContactEmailInput = {
-  name: string;
-  email: string;
-  phone?: string;
-  subject?: string;
-  message: string;
-};
+type ContactEmailInput = ContactEmailContent;
 
 function getSmtpConfig() {
   const host = process.env.SMTP_HOST?.trim();
@@ -31,34 +32,43 @@ function getSmtpConfig() {
   };
 }
 
-export async function sendContactEmail(input: ContactEmailInput) {
+function createTransporter() {
   const smtp = getSmtpConfig();
-  const transporter = nodemailer.createTransport({
-    host: smtp.host,
-    port: smtp.port,
-    secure: smtp.secure,
-    auth: smtp.auth,
-  });
+  return {
+    smtp,
+    transporter: nodemailer.createTransport({
+      host: smtp.host,
+      port: smtp.port,
+      secure: smtp.secure,
+      auth: smtp.auth,
+    }),
+  };
+}
 
-  const subject = input.subject?.trim() || "Nouveau message depuis hexamob.vip";
-  const phoneLine = input.phone?.trim() ? `\nTéléphone : ${input.phone.trim()}` : "";
-  const text = [
-    "Nouveau message via le formulaire de contact HEXAMOB",
-    "",
-    `Nom : ${input.name}`,
-    `E-mail : ${input.email}${phoneLine}`,
-    `Objet : ${subject}`,
-    "",
-    input.message,
-  ].join("\n");
+export async function sendContactEmail(input: ContactEmailInput) {
+  const { smtp, transporter } = createTransporter();
+  const subject = input.subject.trim() || "Demande de contact";
 
   await transporter.sendMail({
     from: smtp.from,
     to: smtp.to,
     replyTo: input.email,
     subject: `[Contact HEXAMOB] ${subject}`,
-    text,
+    text: buildAdminContactEmailText(input),
+    html: buildAdminContactEmailHtml(input),
   });
+
+  try {
+    await transporter.sendMail({
+      from: smtp.from,
+      to: input.email,
+      subject: "Nous avons bien reçu votre message — HEXAMOB",
+      text: buildClientConfirmationEmailText(input),
+      html: buildClientConfirmationEmailHtml(input),
+    });
+  } catch (error) {
+    console.error("[contact] confirmation email failed", error);
+  }
 }
 
 export function isSmtpConfigured(): boolean {
