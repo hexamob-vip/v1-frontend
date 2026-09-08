@@ -14,14 +14,37 @@ export const defaultOgImage = {
   alt: siteName,
 } as const;
 
+function normalizeSiteUrl(url: string): string {
+  const trimmed = url.trim().replace(/\/+$/, "");
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+  return `https://${trimmed}`;
+}
+
 export function getSiteUrl(): string {
   const configured =
     process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-    process.env.SITE_URL?.trim() ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "");
+    process.env.SITE_URL?.trim();
 
-  const base = configured || DEFAULT_SITE_URL;
-  return base.replace(/\/+$/, "");
+  if (configured) {
+    return normalizeSiteUrl(configured);
+  }
+
+  // Never use VERCEL_URL on production — it points to a deployment URL, not the custom domain.
+  if (process.env.VERCEL_ENV === "production") {
+    const productionDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+    if (productionDomain) {
+      return normalizeSiteUrl(productionDomain);
+    }
+    return DEFAULT_SITE_URL;
+  }
+
+  if (process.env.VERCEL_URL) {
+    return normalizeSiteUrl(process.env.VERCEL_URL);
+  }
+
+  return DEFAULT_SITE_URL;
 }
 
 export function absoluteUrl(path: string): string {
