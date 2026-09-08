@@ -406,7 +406,7 @@ export default function HomePage() {
 
           <div
             id="carousel-home"
-            className="-mt-px w-screen overflow-hidden pb-[10vw] max-lg:h-[89.5vw]"
+            className="-mt-px w-screen overflow-x-hidden pb-[10vw] max-lg:pb-[14vw]"
           >
             <div
               id="hexamob-wordmark"
@@ -454,8 +454,12 @@ export default function HomePage() {
                 );
               })}
             </div>
-            <div className="relative z-[1] mt-[3vw] flex w-full justify-center max-lg:mt-[6vw]">
-              <HexamobButton href={GOOGLE_REVIEWS_URL} className="text-white">
+            <div className="relative z-10 mt-[3vw] flex w-full justify-center px-[3vw] max-lg:mt-[8vw]">
+              <HexamobButton
+                href={GOOGLE_REVIEWS_URL}
+                variant="white"
+                className="max-lg:px-[4vw] max-lg:py-[2vw] max-lg:text-[3.2vw]"
+              >
                 Voir tous les avis
               </HexamobButton>
             </div>
