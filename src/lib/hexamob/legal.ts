@@ -19,7 +19,7 @@ export const companyLegal = {
   creationDate: "10 juillet 2025",
   director: "Anthony JOSON",
   email: "contact@hexamob.vip",
-  phone: "+33 5 59 93 24 56",
+  phone: "+33 6 72 10 24 11",
 } as const;
 
 export const hostingLegal = {
